@@ -55,6 +55,17 @@ function getConversionText(system, systemTotal) {
         let typeConversionText = '';
         
         switch (type) {
+            case 'things':
+                typeConversionText += 
+                    `${systemTotal} items`
+                break;
+
+            case 'things':
+                typeConversionText += 
+                    `${systemTotal} iku
+                     ${(systemTotal / 3).toFixed(1)} ha`
+                break;
+
             case 'volume':
                 typeConversionText += 
                     `${systemTotal} sila<br>
