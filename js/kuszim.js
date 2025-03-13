@@ -60,7 +60,7 @@ function getConversionText(system, systemTotal) {
                     `${systemTotal} items`
                 break;
 
-            case 'things':
+            case 'area':
                 typeConversionText += 
                     `${systemTotal} iku
                      ${(systemTotal / 3).toFixed(1)} ha`
