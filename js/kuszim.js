@@ -1,10 +1,10 @@
 // Function to parse the input and calculate the value
 function calculateConversion(input) {
+    input = input.replace(/[()#?]/g, '');
+    
     let result = '';
     const numeralPattern = /(\d+)(N\d{2})/g;
     let numerals = [];
-
-    input = input.replace(/[()#?]/g, '');
 
     // Parse all numerals in the input
     while (match = numeralPattern.exec(input)) {
