@@ -62,8 +62,9 @@ function getConversionText(system, systemTotal) {
 
             case 'area':
                 typeConversionText += 
-                    `${systemTotal} iku
-                     ${(systemTotal / 3).toFixed(1)} ha`
+                    `${systemTotal} iku<br>
+                     ${(systemTotal / 3).toFixed(1)} ha<br>
+                     enough to grow ${systemTotal * 200} kg of barley and feed about ${systemTotal} workers`
                 break;
 
             case 'volume':
