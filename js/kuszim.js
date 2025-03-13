@@ -75,12 +75,13 @@ function getConversionText(system, systemTotal) {
                 break;
             case 'cereal':
                 typeConversionText += 
-                    `ca. ${Math.round(systemTotal * 0.83 * 0.6)} kg<br>
-                     ca. ${Math.round(systemTotal / 30)} monthly workers' rations`;
+                    `ca. ${Math.round(systemTotal * 0.83 * 0.6)} kg`;
                 break;
 
             case 'barley':
-                typeConversionText += `needs ca. ${(systemTotal / 360).toFixed(2)} iku (or ${(systemTotal / 360 * 0.36).toFixed(2)} ha) to grow`;
+                typeConversionText += `
+                    ca. ${Math.round(systemTotal / 30)} monthly workers' rations<br>
+                    needs ca. ${(systemTotal / 360).toFixed(2)} iku (or ${(systemTotal / 360 * 0.36).toFixed(2)} ha) to grow`;
                 break;
             
             default:
