@@ -4,7 +4,7 @@ function calculateConversion(input) {
     const numeralPattern = /(\d+)(N\d{2})/g;
     let numerals = [];
 
-    input = input.replace(/[()]/g, '');
+    input = input.replace(/[()#?]/g, '');
 
     // Parse all numerals in the input
     while (match = numeralPattern.exec(input)) {
