@@ -149,5 +149,40 @@ conversions = [
             "N49": 54000        // double stroke   
         },
         "types": ["volume", "cereal"]
+    },
+
+    // DUG
+    {
+        "system": "archaic dairy?", 
+        "description": "uruk iv; uncertain if really used for dairy fats",
+        "values": {
+            "N02": 0.5,
+            "N01": 1,
+            "N14": 10
+        },
+        "types": ["dairy"]
+    },
+    {
+        "system": "dug~b", 
+        "description": "uruk iii only; dairy fats",
+        "values": {
+            "N01 SILA3~a": 1,
+            "N01 DUG~b": 10
+        },
+        "types": ["dairy"]
+    },
+    {
+        "system": "dug~c", 
+        "description": "uruk iii only; dairy fats",
+        "values": {
+            "N02": 1,
+            "N01 KU3~a": 5,
+            "N01 DUG~c": 10,
+            "N01 UKKIN~b+NI~a": 10,
+            "N14": 100,
+            "N14 DUG~c": 100,
+            "N14 UKKIN~b+NI~a": 100,
+        },
+        "types": ["dairy"]
     }
 ]

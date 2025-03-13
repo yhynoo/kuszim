@@ -9,3 +9,5 @@ Can't count time or dairy products yet. Bisexagesimal not yet implemented.
 
 - 1 iku is 0.36 ha
 - 1 iku can produce 12 bariga of barley
+
+- 2 to 4 liters of dairy fat per cow yearly (Englund, 1995)

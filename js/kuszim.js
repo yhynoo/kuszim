@@ -1,43 +1,38 @@
 // Function to parse the input and calculate the value
 function calculateConversion(input) {
-
     let result = '';
-    const numeralPattern = /(\d+)(N\d{2})/g;
+    const numeralPattern = /(\d+)(N\d{2})(?:\s*(DUG~b|DUG~c|KU3~a|SILA3~a|UKKIN~b\+NI~a))?/g;
     let numerals = [];
 
-    input = input.replace(/[()?#!]/g, '')
+    input = input.replace(/[()?#,]/g, '').replace(/\s+/g, ' ').trim();
 
     // Parse all numerals in the input
-    while (match = numeralPattern.exec(input)) {
-        numerals.push({amount: parseInt(match[1]), sign: match[2]});
+    let match;
+    while ((match = numeralPattern.exec(input)) !== null) {
+        let sign = match[2];  // Base numeral (e.g., N01)
+        if (match[3]) sign += ' ' + match[3]; // Append extra word if present
+
+        numerals.push({ amount: parseInt(match[1]), sign });
     }
 
-    // Find which system contains all the numerals
+    // Process numerals using your existing system logic
     let validSystems = findValidSystems(numerals);
     if (validSystems.length === 0) {
-        result = "not a valid numeral.";
+        result = "No valid system found for the given numerals.";
     } else {
         validSystems.forEach(system => {
-            let systemTotal = 0;
-            numerals.forEach(numeral => {
-                if (system.values[numeral.sign]) {
-                    systemTotal += numeral.amount * system.values[numeral.sign];
-                }
-            });
+            let systemTotal = numerals.reduce((sum, numeral) => 
+                sum + (system.values[numeral.sign] || 0) * numeral.amount, 0);
+            
             result += `
-                <div class = "kuszimResult">
-                    <p>
-                        <strong>${system.system}</strong><br>
-                        ${system.description}
-                    </p>
-                    <p>
-                        ${getConversionText(system, systemTotal)}
-                    </p>
+                <div class="kuszimResult">
+                    <p><strong>${system.system}</strong><br>${system.description}</p>
+                    <p>${getConversionText(system, systemTotal)}</p>
                 </div>
-                `
+            `;
         });
     }
-    
+
     return result;
 }
 
@@ -69,7 +64,7 @@ function getConversionText(system, systemTotal) {
         switch (type) {
             case 'things':
                 typeConversionText += 
-                    `${systemTotal} items`
+                    `${systemTotal} item(s)`
                 break;
 
             case 'area':
@@ -95,6 +90,14 @@ function getConversionText(system, systemTotal) {
                     needs ca. ${(systemTotal / 360).toFixed(2)} iku (or ${(systemTotal / 360 * 0.36).toFixed(2)} ha) to grow`;
                 break;
             
+            case 'dairy':
+                typeConversionText += `
+                    ${systemTotal} bowls<br>
+                    ca. ${(systemTotal * 0.83).toFixed(2)} liters<br>
+                    needs a herd of ${Math.max(1, Math.round(systemTotal * 0.83 / 4))} to ${Math.max(1, Math.round(systemTotal * 0.83 / 2))} cows to produce in a year
+                `
+                break;
+
             default:
                 typeConversionText += `${systemTotal}, no conversion available`;
                 break;
