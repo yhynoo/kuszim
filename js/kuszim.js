@@ -3,7 +3,8 @@ function calculateConversion(input) {
     let result = '';
     const numeralPattern = /(\d+)(N\d{2})/g;
     let numerals = [];
-    let total = 0;
+
+    input = input.replace(/[()]/g, '');
 
     // Parse all numerals in the input
     while (match = numeralPattern.exec(input)) {
@@ -63,23 +64,23 @@ function getConversionText(system, systemTotal) {
             case 'area':
                 typeConversionText += 
                     `${systemTotal} iku<br>
-                     ${(systemTotal / 3).toFixed(1)} ha<br>
-                     enough to grow ${systemTotal * 200} kg of barley and feed about ${systemTotal} workers`
+                     ${(systemTotal * 0.36).toFixed(2)} ha<br>
+                     enough to grow ${(systemTotal * 12)} monthly workers' rations or ca. ${(systemTotal * 360 * 0.6)} kg of barley`
                 break;
 
             case 'volume':
                 typeConversionText += 
                     `${systemTotal} sila<br>
-                     ${systemTotal * 0.8} liters`;
+                     ca. ${Math.round(systemTotal * 0.83)} liters`;
                 break;
             case 'cereal':
                 typeConversionText += 
-                    `ca. ${Math.round(systemTotal * 0.8 * 0.6)} kg<br>
-                     ca. ${Math.round(systemTotal / 30)} workers' monthly rations`;
+                    `ca. ${Math.round(systemTotal * 0.83 * 0.6)} kg<br>
+                     ca. ${Math.round(systemTotal / 30)} monthly workers' rations`;
                 break;
 
             case 'barley':
-                typeConversionText += `needs ca. ${(systemTotal * 0.8 * 0.6 / 600).toFixed(2)} ha (or ${(systemTotal * 0.8 * 0.6 / 200).toFixed(2)} iku) to grow`;
+                typeConversionText += `needs ca. ${(systemTotal / 360).toFixed(2)} iku (or ${(systemTotal / 360 * 0.36).toFixed(2)} ha) to grow`;
                 break;
             
             default:

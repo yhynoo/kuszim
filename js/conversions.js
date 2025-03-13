@@ -24,32 +24,6 @@ conversions = [
         },
         "types": ["things"]
     },
-    {
-        "system": "bisexagesimal",
-        "description": "used to count rationed goods",
-        "values": {
-            "N08": 0.5,
-            "N01": 1,
-            "N14": 10,
-            "N34": 60,
-            "N51": 120,
-            "N54": 1200,
-            "N56": 7200
-        },
-        "types": ["things"]
-    },
-    {
-        "system": "bisexagesimal'",
-        "description": "?",
-        "values": {
-            "N06": 1,
-            "N21": 10,
-            "N38": 60,
-            "N52": 120,
-            "N60": 1200
-        },
-        "types": ["things"]
-    },
     
     // area
     {

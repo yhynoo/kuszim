@@ -1,10 +1,11 @@
 # Conversions
 
-Can't count time or dairy products yet.
+Can't count time or dairy products yet. Bisexagesimal not yet implemented.
 
 ## Assumed values for conversions
 
-- 0.8 liters for 1 sila3
+- 0.83 liters for 1 sila3
 - 0.6 kg per liter of cereals
 
-- 1 ha can produce ca. 600 kg of barley and is equal to ca. 3 iku
+- 1 iku is 0.36 ha
+- 1 iku can produce 12 bariga of barley
