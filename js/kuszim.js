@@ -96,7 +96,7 @@ function getConversionText(system, systemTotal) {
                 break;
             
             default:
-                typeConversionText += `${systemTotal} no conversion available`;
+                typeConversionText += `${systemTotal}, no conversion available`;
                 break;
         }
 
