@@ -12,7 +12,7 @@ conversions = [
             "N45": 3600,
             "N50": 36000
         },
-        "types": ["things"]
+        "types": ["things"] 
     },
     {
         "system": "sexagesimal'",
@@ -40,7 +40,25 @@ conversions = [
         "types": ["area"]
     },
 
-    // cerals
+    // EN system
+    {
+        "system": "en",
+        "description": "uruk iv only, uncertain; equivalences of N09 - N12 are unknown; here 0 is used",
+        "values": {
+            "N09": 0,
+            "N10": 0,
+            "N11": 0,
+            "N12": 0,
+            "N07": 0.0625,
+            "N08": 0.25,
+            "N24": 0.5,
+            "N01": 1,
+            "N14": 10,
+        },
+        "types": ["unknown"]
+    },
+
+    // cereals
     {
         "system": "še",
         "description": "used to measure barley or total volumes of cereals",
@@ -97,6 +115,38 @@ conversions = [
             "N20": 180,
             "N47": 1800,
             "N37": 5400
+        },
+        "types": ["volume", "cereal"]
+    },
+    {
+        "system": "še (mixed)",
+        "description": "used in some contexts to measure totals of mixed kinds of cereals",
+        "values": {
+            "N30~c": 0.6,
+            "N30~a": 1,
+            "N29": 1.2,
+            "N28": 1.5,
+            "N26": 2,
+            "N27": 2,           // groats
+            "N24": 3,
+            "N25": 3,           // groats
+            "N39": 6,
+            "N41": 6,           // double stroke
+            "N42": 6,           // groats
+            "N01": 30,
+            "N04": 30,          // double stroke
+            "N05": 30,          // groats
+            "N14": 180,
+            "N19": 180,         // double stroke
+            "N20": 180,         // groats
+            "N45": 1800,
+            "N46": 1800,        // double stroke
+            "N47": 1800,        // groats
+            "N34": 5400,
+            "N36": 5400,        // double stroke
+            "N37": 5400,        // groats
+            "N48": 54000,
+            "N49": 54000        // double stroke   
         },
         "types": ["volume", "cereal"]
     }

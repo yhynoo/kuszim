@@ -41,11 +41,21 @@ function calculateConversion(input) {
     return result;
 }
 
-// Function to check which systems contain all the required numerals
 function findValidSystems(numerals) {
-    return conversions.filter(system => {
-        return numerals.every(numeral => system.values.hasOwnProperty(numeral.sign));
-    });
+    // Find valid systems excluding "še (mixed)"
+    const validSystems = conversions.filter(system => 
+        system.system !== "še (mixed)" && numerals.every(numeral => system.values.hasOwnProperty(numeral.sign))
+    );
+
+    // If no systems are valid, check for "še (mixed)"
+    if (validSystems.length === 0) {
+        const mixedSystem = conversions.find(system => system.system === 'še (mixed)' && 
+            numerals.every(numeral => system.values.hasOwnProperty(numeral.sign))
+        );
+        return mixedSystem ? [mixedSystem] : [];
+    }
+
+    return validSystems;
 }
 
 // Function to generate the conversion result based on system type
@@ -71,7 +81,7 @@ function getConversionText(system, systemTotal) {
 
             case 'volume':
                 typeConversionText += 
-                    `${systemTotal} sila<br>
+                    `${systemTotal} bowls<br>
                      ca. ${Math.round(systemTotal * 0.83)} liters`;
                 break;
             case 'cereal':
@@ -86,7 +96,7 @@ function getConversionText(system, systemTotal) {
                 break;
             
             default:
-                typeConversionText += `no conversion available`;
+                typeConversionText += `${systemTotal} no conversion available`;
                 break;
         }
 
