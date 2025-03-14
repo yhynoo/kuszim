@@ -79,6 +79,7 @@ function getConversionText(system, systemTotal) {
                     `${systemTotal} bowls<br>
                      ca. ${Math.round(systemTotal * 0.83)} liters`;
                 break;
+
             case 'cereal':
                 typeConversionText += 
                     `ca. ${Math.round(systemTotal * 0.83 * 0.6)} kg`;
@@ -88,6 +89,16 @@ function getConversionText(system, systemTotal) {
                 typeConversionText += `
                     ca. ${Math.round(systemTotal / 30)} monthly workers' rations<br>
                     needs ca. ${(systemTotal / 360).toFixed(2)} iku (or ${(systemTotal / 360 * 0.36).toFixed(2)} ha) to grow`;
+                break;
+
+            case 'malt':
+                typeConversionText += `
+                    enough to make ca. ${Math.round(systemTotal / 1.2)} DUG~a of beer`
+                break;
+
+            case 'groats':
+                typeConversionText += `
+                    enough to make ca. ${Math.round(systemTotal / 2.4)} - ${Math.round(systemTotal / 2)} DUG~a of beer`
                 break;
             
             case 'dairy':

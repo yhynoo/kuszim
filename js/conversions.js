@@ -88,7 +88,7 @@ conversions = [
             "N18": 180,
             "N45": 1800
         },
-        "types": ["volume"]
+        "types": ["volume", "malt"]
     },
     {
         "system": "še\"", 
@@ -116,7 +116,7 @@ conversions = [
             "N47": 1800,
             "N37": 5400
         },
-        "types": ["volume", "cereal"]
+        "types": ["volume", "cereal", "groats"]
     },
     {
         "system": "še (mixed)",

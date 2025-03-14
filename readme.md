@@ -11,3 +11,4 @@ Can't count time or dairy products yet. Bisexagesimal not yet implemented.
 - 1 iku can produce 12 bariga of barley
 
 - 2 to 4 liters of dairy fat per cow yearly (Englund, 1995)
+- for beer, a range of 2 - 2.4 sila of groats and 1.2 sila of malt per DUG is used (Englund, 2001)
