@@ -105,7 +105,7 @@ function getConversionText(system, systemTotal) {
                 typeConversionText += `
                     ${systemTotal} bowls<br>
                     ca. ${(systemTotal * 0.83).toFixed(2)} liters<br>
-                    needs a herd of ${Math.max(1, Math.round(systemTotal * 0.83 / 4))} to ${Math.max(1, Math.round(systemTotal * 0.83 / 2))} cows to produce in a year
+                    needs a herd of ${Math.max(1, Math.round(systemTotal * 0.83 / 3))} cows on average to produce in a year
                 `
                 break;
 
